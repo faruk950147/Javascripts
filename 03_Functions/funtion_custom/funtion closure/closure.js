@@ -1,67 +1,63 @@
-// function greets(msg) {
-//     return function (name) {
-//         console.log(msg + " " + name);
+// normal function
+// function add(a, b) {
+//     return a + b;
+// }
+// console.log(add(2, 3));
+// Scope global
+
+// let num1 = 80
+// let num2 = 20
+// not a closure but advantage of closure
+// let add = function () {
+//     return num1 + num2;
+// }
+// this is most common use of closure
+// let sum = add();
+// console.dir(sum);
+// console.log(sum());
+
+
+// // not a closure because num1 is not in the scope of add2 but advantage of closure
+// let add2 = function () {
+//     let num3 = 50;
+//     return num1 + num3;
+// }
+// this is most common use of closure
+// let sum2 = add2();
+// console.dir(sum2);
+// console.log(sum2());
+
+//it is a closure because num1 and num2 are in the scope of add3
+// let add3 = function () {
+//     let num3 = 50;
+//     return function () {
+//         return num1 + num3;
 //     }
 // }
+// // this is most common use of closure
+// let sum3 = add3();
+// console.dir(sum3);
+// console.log(sum3());
 
-// const greet = greets("Hello");
-// greet("John");
-    
-// function greets(msg) {
-//     function greetings(name) {
-//         return msg + " " + name;
-//     }
-//     return greetings;
-// }
 
-// const gm = greets("Good Morning");
-// const gm2 = greets("Good Afternoon");
-// const gm3 = greets("Good Evening");
-// const gm4 = greets("Good Night");
-// console.log(gm("John"));
-// console.log(gm2("John"));
-// console.log(gm3("John"));
-// console.log(gm4("John"));
-
-// function base(x) {
-//     function pow(n) {
-//         let result = 1;
-//         for (let i = 0; i < n; i++) {
-//             result *= n;
-//         }
-//         return result;
-//     }
-//     return pow;
-// }
-
-// const base2 = base(2);
-// console.log(base2(3));
-
-// function base(x) {
-//     return function (n) {
-//         let result = 1;
-//         for (let i = 0; i < n; i++) {
-//             result *= x;
-//         }
-//         return result;
+// var num3 = 50;
+// var num4 = 10;
+// var add4 = function () {
+//     var num5 = 20;
+//     return function () {
+//         return num3 + num4 + num5;
 //     }
 // }
+// var sum4 = add4();
+// console.dir(sum4);  
 
-// const base10 = base(10);
-// console.log(base10(2));
-
-
-function base(x) {
-    return function pow(n) {
-        let result = 1;
-        for (let i = 0; i < x; i++) {
-            result *= n;
+(function () {
+    var num6 = 30;
+    var add6 = function () {
+        var num7 = 40;
+        if (num6 < num7) {
+            console.log(num6);
         }
-        return result;
     }
-}
-
-const base10 = base(10);
-console.log(base10(2));
-
-
+    console.dir(add6);
+})();
